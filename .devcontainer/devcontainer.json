@@ -1,5 +1,5 @@
 {
-  "name": "Java",
+  "name": "Java with MySQL",
   "image": "mcr.microsoft.com/devcontainers/java:1-21",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
@@ -8,5 +8,10 @@
       "mavenVersion": "3.8.6",
       "installGradle": "true"
     }
-  }
+  },
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [3306, 9002],
+  "postCreateCommand": "cd MySpring_Boot_aa23v_VotingApp_Final && ./mvnw clean package -DskipTests"
 }
