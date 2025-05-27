@@ -12,6 +12,5 @@
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "forwardPorts": [3306, 9002],
-  "postCreateCommand": "cd MySpring_Boot_aa23v_VotingApp_Final && ./mvnw clean package -DskipTests"
+  "forwardPorts": [3306, 9002]
 }
