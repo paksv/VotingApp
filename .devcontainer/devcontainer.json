@@ -1,13 +1,21 @@
 {
-  "name": "Java with MySQL",
+  "name": "Java Spring Boot",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "17",
-      "installMaven": "true"
+      "installMaven": true
     }
   },
-  "forwardPorts": [3306, 9002]
+  "forwardPorts": [8080, 3306],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "pivotal.vscode-spring-boot"
+      ]
+    }
+  }
 }

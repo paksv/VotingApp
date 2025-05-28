@@ -7,20 +7,24 @@ services:
       - ../:/workspaces/${localWorkspaceFolderBasename}:cached
     command: sleep infinity
     network_mode: service:db
-    depends_on:
-      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ecommerce_store
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: zinterview
+      MYSQL_DATABASE: ecommerce_store
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password
 
 volumes:
   mysql-data:
