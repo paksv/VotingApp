@@ -6,7 +6,7 @@ services:
     command: sleep infinity
     network_mode: service:db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ecommerce_store
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/zinterview
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: password
 
@@ -14,7 +14,7 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: ecommerce_store
+      MYSQL_DATABASE: zinterview
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user
       MYSQL_PASSWORD: password
